@@ -1,0 +1,22 @@
+{
+    "model"  :{
+        "name": "Bruce Wayne",
+        "owner": "Wayne Enterprise"
+        },
+
+      "modelVersion" :{
+        "modelname": "ClarK Kent",
+        "owner": "Daily Planet",
+        "name": "Peter West",
+        "hugging_face_model": "Jeff Handy"
+      },
+
+      "modelinfer" :{
+            "text": "This is the Infer teext",
+            "modelname": "Peter Parker",
+            "owner": "SpiderMan",
+            "name": "John ",
+            "hugging_face_model": "Jeff Handy"
+      }
+      
+}

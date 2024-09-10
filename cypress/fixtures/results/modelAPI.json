@@ -1,0 +1,52 @@
+{
+  "body": {
+    "id": "3d09ff6f-43ea-4f5a-9d95-8840ce5a67ff",
+    "name": "Bruce Wayne",
+    "owner": "Wayne Enterprise"
+  },
+  "headers": {
+    "date": "Tue, 10 Sep 2024 02:11:31 GMT",
+    "server": "uvicorn",
+    "content-length": "93",
+    "content-type": "application/json"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "isOkStatusCode": true,
+  "requestHeaders": {
+    "Connection": "keep-alive",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.2 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36",
+    "accept": "*/*",
+    "accept-encoding": "gzip, deflate",
+    "content-type": "application/json",
+    "content-length": 49
+  },
+  "requestBody": "{\"name\":\"Bruce Wayne\",\"owner\":\"Wayne Enterprise\"}",
+  "duration": 6,
+  "allRequestResponses": [
+    {
+      "Request Body": "{\"name\":\"Bruce Wayne\",\"owner\":\"Wayne Enterprise\"}",
+      "Request Headers": {
+        "Connection": "keep-alive",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.2 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36",
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "content-length": 49
+      },
+      "Request URL": "http://localhost:8000/models",
+      "Response Body": {
+        "id": "3d09ff6f-43ea-4f5a-9d95-8840ce5a67ff",
+        "name": "Bruce Wayne",
+        "owner": "Wayne Enterprise"
+      },
+      "Response Headers": {
+        "date": "Tue, 10 Sep 2024 02:11:31 GMT",
+        "server": "uvicorn",
+        "content-length": "93",
+        "content-type": "application/json"
+      },
+      "Response Status": 200
+    }
+  ]
+}
