@@ -1,0 +1,53 @@
+name: Cypress Test Pipeline
+
+on:
+  push:
+    branches:
+      - main  # You can change this to the branch you want the tests to run on.
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16]  # You can use the version of Node.js that your project requires.
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Step 3: Cache `node_modules` for faster runs
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Step 4: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 5: Run Cypress tests
+      - name: Run Cypress tests
+        run: npx cypress run
+
+      # Step 6: Upload test results (optional)
+      - name: Archive test results
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-failed-tests
+          path: cypress/screenshots  # Path where Cypress saves screenshots of failed tests
