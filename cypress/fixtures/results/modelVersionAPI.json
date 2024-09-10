@@ -1,11 +1,11 @@
 {
   "body": {
-    "id": "22de7285-440d-47d4-a0da-ee406fd2b7e7",
+    "id": "113da83a-04c4-431f-b148-786efea2a093",
     "name": "ClarK Kent",
     "owner": "Daily Planet"
   },
   "headers": {
-    "date": "Tue, 10 Sep 2024 02:11:34 GMT",
+    "date": "Tue, 10 Sep 2024 03:16:37 GMT",
     "server": "uvicorn",
     "content-length": "88",
     "content-type": "application/json"
@@ -15,20 +15,20 @@
   "isOkStatusCode": true,
   "requestHeaders": {
     "Connection": "keep-alive",
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.2 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
     "accept": "*/*",
     "accept-encoding": "gzip, deflate",
     "content-type": "application/json",
     "content-length": 44
   },
   "requestBody": "{\"name\":\"ClarK Kent\",\"owner\":\"Daily Planet\"}",
-  "duration": 5,
+  "duration": 6,
   "allRequestResponses": [
     {
       "Request Body": "{\"name\":\"ClarK Kent\",\"owner\":\"Daily Planet\"}",
       "Request Headers": {
         "Connection": "keep-alive",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.2 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
         "accept": "*/*",
         "accept-encoding": "gzip, deflate",
         "content-type": "application/json",
@@ -36,12 +36,12 @@
       },
       "Request URL": "http://localhost:8000/models",
       "Response Body": {
-        "id": "22de7285-440d-47d4-a0da-ee406fd2b7e7",
+        "id": "113da83a-04c4-431f-b148-786efea2a093",
         "name": "ClarK Kent",
         "owner": "Daily Planet"
       },
       "Response Headers": {
-        "date": "Tue, 10 Sep 2024 02:11:34 GMT",
+        "date": "Tue, 10 Sep 2024 03:16:37 GMT",
         "server": "uvicorn",
         "content-length": "88",
         "content-type": "application/json"

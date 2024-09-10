@@ -13,7 +13,7 @@ describe('Testing THe API for Model', () => {
     it('Should fail to add a model with missing owner', () => {
       cy.request({
         method: 'POST',
-        url: 'http://localhost:8000/models',
+        url: '/models',
         headers:{},
         qs:{},
         body: {
@@ -28,7 +28,7 @@ describe('Testing THe API for Model', () => {
     it('Should fail to add a model with missing name', () => {
       cy.request({
         method: 'POST',
-        url: 'http://localhost:8000/models',
+        url: '/models',
         headers:{},
         qs:{},
         body: {
@@ -44,7 +44,7 @@ describe('Testing THe API for Model', () => {
     it('Should add a new model with Valid name and Owner', () => {
         cy.request({
           method: 'POST',
-          url: 'http://localhost:8000/models',
+          url: '/models',
           headers:{},
           qs:{},
           body: {
@@ -70,7 +70,7 @@ describe('Testing THe API for Model', () => {
       it('Gettings the Data for Models', () => {
         cy.request({
             method:'GET',
-            url:'http://localhost:8000/models',
+            url:'/models',
             headers:{},
             qs:{},
             body:{}
@@ -90,7 +90,7 @@ describe('Testing THe API for Model', () => {
       const modelId = Cypress.env('modelId');  // Retrieve modelId from previous test cases
       cy.request({
         method: 'DELETE',
-        url: `http://localhost:8000/models/${modelId}`, 
+        url: `/models/${modelId}`, 
       }).then((response) => {
         expect(response.status).to.eq(200); 
       });

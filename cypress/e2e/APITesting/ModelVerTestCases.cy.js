@@ -15,7 +15,7 @@ describe('Testing THe API for Model Version', () => {
     it('Gettings Model ID to for future test Cases', () => {
       cy.request({
         method: 'POST',
-        url: 'http://localhost:8000/models',
+        url: '/models',
         headers:{},
         qs:{},
         body: {
@@ -44,7 +44,7 @@ describe('Testing THe API for Model Version', () => {
       const modelId = Cypress.env('modelId'); 
       cy.request({
         method: 'POST',
-        url: `http://localhost:8000/models/${modelId}/versions`, 
+        url: `/models/${modelId}/versions`, 
         headers:{},
         qs:{},
         body: {
@@ -60,7 +60,7 @@ describe('Testing THe API for Model Version', () => {
       const modelId = Cypress.env('modelId'); 
       cy.request({
         method: 'POST',
-        url: `http://localhost:8000/models/${modelId}/versions`, 
+        url: `/models/${modelId}/versions`, 
         headers:{},
         qs:{},
         body: {
@@ -77,7 +77,7 @@ describe('Testing THe API for Model Version', () => {
       const modelId = Cypress.env('modelId'); 
       cy.request({
         method: 'POST',
-        url: `http://localhost:8000/models/${modelId}/versions`, 
+        url: `/models/${modelId}/versions`, 
         headers:{},
         qs:{},
         body: {
@@ -104,7 +104,7 @@ describe('Testing THe API for Model Version', () => {
       const modelId = Cypress.env('modelId'); 
       cy.request({
           method:'GET',
-          url: `http://localhost:8000/models/${modelId}/versions`, 
+          url: `/models/${modelId}/versions`, 
           headers:{},
           qs:{},
           body:{}
@@ -124,7 +124,7 @@ describe('Testing THe API for Model Version', () => {
       const modelVersionId = Cypress.env('modelVersionId');
       cy.request({
         method: 'DELETE',
-        url: `http://localhost:8000/models/${modelId}/versions/${modelVersionId}`, 
+        url: `/models/${modelId}/versions/${modelVersionId}`, 
       }).then((response) => {
         expect(response.status).to.eq(200); 
       });
@@ -135,7 +135,7 @@ describe('Testing THe API for Model Version', () => {
       const modelId = Cypress.env('modelId');  // Retrieve modelId from previous test cases
       cy.request({
         method: 'DELETE',
-        url: `http://localhost:8000/models/${modelId}`, 
+        url: `/models/${modelId}`, 
       }).then((response) => {
         expect(response.status).to.eq(200); 
       });
