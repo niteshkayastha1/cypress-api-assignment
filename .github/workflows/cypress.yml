@@ -33,12 +33,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Cache Cypress binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress
+
       - name: Install dependencies
         run: npm install
 
-      # Add this step to fix permissions
-      - name: Fix Cypress permission issue
-        run: chmod +x ./node_modules/.bin/cypress
+      # Ensure Cypress is installed, will use the cached binary if available
+      - name: Install Cypress binary
+        run: npx cypress install
 
       # Run Cypress tests
       - name: Run Cypress tests
