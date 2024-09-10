@@ -17,14 +17,17 @@ jobs:
         node-version: [16]
 
     steps:
+      # Step 1: Checkout the code
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
+      # Step 3: Cache node_modules for faster runs
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
@@ -33,6 +36,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      # Step 4: Cache Cypress binary
       - name: Cache Cypress binary
         uses: actions/cache@v3
         with:
@@ -41,13 +45,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cypress
 
+      # Step 5: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Ensure Cypress is installed, will use the cached binary if available
+      # Step 6: Fix permission issue for Cypress binary
+      - name: Fix Cypress permission issue
+        run: chmod +x ./node_modules/.bin/cypress
+
+      # Step 7: Install Cypress binary
       - name: Install Cypress binary
         run: npx cypress install
 
-      # Run Cypress tests
+      # Step 8: Run Cypress tests
       - name: Run Cypress tests
         run: npx cypress run
